@@ -1,7 +1,9 @@
 spring:
   profiles:
     active: local
-
+  batch:
+    job:
+      names: ${job.name:NONE}
 ---
 spring:
   datasource:
@@ -24,3 +26,6 @@ spring:
   config:
     activate:
       on-profile: mysql
+  jpa:
+    hibernate:
+      ddl-auto: create
